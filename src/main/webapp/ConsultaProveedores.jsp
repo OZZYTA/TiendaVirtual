@@ -115,7 +115,7 @@ body {
 			nit = "null";
 		}
 		var http = new XMLHttpRequest();
-		var url = 'http://localhost:8080/consultarProveedores';
+		var url = 'http://localhost:8080/TiendaVirtualApp/consultarProveedores';
 		var params = "nit=" + nit;
 		http.open('POST', url, true);
 
@@ -125,7 +125,7 @@ body {
 
 		http.onreadystatechange = function() {//Call a function when the state changes.
 			if (http.readyState == 4 && http.status == 200) {
-				alert(http.responseText);
+				//alert(http.responseText);
 				CreateTableFromJSON(http.responseText);
 
 			}
@@ -193,7 +193,7 @@ body {
 		</tr>
 	</table>
 	<div id="dvResult"></div></div>
-	 <form class="login-container" action="/GestProveedor.jsp" method="post">
+	<br> <form action="/TiendaVirtualApp/GestProveedor.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>

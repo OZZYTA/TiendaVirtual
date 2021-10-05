@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+</div><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -118,16 +118,16 @@ body {
   
   <h2 class="login-header">Gestión Proveedores<br>Tienda Virtual UElBosque</h2>
 
-  <form class="login-container" action="/RegistroProveedores.jsp" method="post">
+  <form class="login-container" action="/TiendaVirtualApp/RegistroProveedores.jsp" method="post">
     <input type="submit" name="create" id="create" value="Registrar Proveedores">
   </form>
-   <form class="login-container" action="/ConsultaProveedores.jsp" method="post">
+   <form class="login-container" action="/TiendaVirtualApp/ConsultaProveedores.jsp" method="post">
     <input type="submit" name="update" id="update" value="Consultar Proveedores">
   </form>
-   <form class="login-container" action="/actUsuarios.jsp" method="post">
+   <form class="login-container" action="/TiendaVirtualApp/actUsuarios.jsp" method="post">
     <input type="submit" name="update" id="update" value="Actualizar/Eliminar Proveedores">
   </form>
-     <form class="login-container" action="/home.jsp" method="post">
+     <form class="login-container" action="/TiendaVirtualApp/home.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>

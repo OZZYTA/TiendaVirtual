@@ -96,7 +96,7 @@ body {
     </style>
 
 <head>
-<title>Gestión Clientes</title>
+<title>Dashboard</title>
 <meta charset="utf-8">
 <style type="text/css">
 body {
@@ -112,23 +112,30 @@ body {
 <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
 
+
 <body>
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">LISTADOS<br>Tienda Virtual UElBosque</h2>
+  <h2 class="login-header">Gestiones<br>Tienda Virtual UElBosque</h2>
 
-  <form class="login-container" action="/listarClientes" method="post">
-    <input type="submit" name="create" id="create" value="Listado de Clientes">
+  <form class="login-container" action="/TiendaVirtualApp/GestUsuarios.jsp" method="post">
+    <input type="submit" name="register" id="register" value="Usuarios">
   </form>
-   <form class="login-container" action="/listarUsuarios" method="post">
-    <input type="submit" name="update" id="update" value="Lista de Usuarios">
+   <form class="login-container" action="/TiendaVirtualApp/GestClientes.jsp" method="post">
+    <input type="submit" name="register" id="register" value="Clientes">
   </form>
-  <form class="login-container" action="/listarProveedores" method="post">
-    <input type="submit" name="update" id="update" value="Lista de Proveedores">
+     <form class="login-container" action="/TiendaVirtualApp/GestProveedor.jsp" method="post">
+    <input type="submit" name="register" id="register" value="Proveedores">
   </form>
-     <form class="login-container" action="home.jsp" method="post">
-    <input type="submit" name="back" id="back" value="Atrás">
+   <form class="login-container" action="/TiendaVirtualApp/GestProductos.jsp" method="post">
+    <input type="submit" name="register" id="register" value="Productos">
+  </form>
+     <form class="login-container" action="/TiendaVirtualApp/Ventas.jsp" method="post">
+    <input type="submit" name="register" id="register" value="Ventas">
+  </form>
+     <form class="login-container" action="/TiendaVirtualApp/LogOut" method="post" onsubmit="return confirm ('Gracias por usar nuestra tienda virtual')">
+    <input type="submit" name="register" id="register" value="Cerrar Sesión">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>
   

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+</div><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -96,7 +96,7 @@ body {
     </style>
 
 <head>
-<title>Dashboard</title>
+<title>Gestión de Productos</title>
 <meta charset="utf-8">
 <style type="text/css">
 body {
@@ -112,30 +112,23 @@ body {
 <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
 
-
 <body>
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Gestiones<br>Tienda Virtual UElBosque</h2>
+  <h2 class="login-header">Gestión de Productos<br>Tienda Virtual UElBosque</h2>
 
-  <form class="login-container" action="/GestUsuarios.jsp" method="post">
-    <input type="submit" name="register" id="register" value="Usuarios">
+  <form class="login-container" action="/TiendaVirtualApp/Productos.jsp" method="post">
+    <input type="submit" name="create" id="create" value="Registrar Productos">
   </form>
-   <form class="login-container" action="/GestClientes.jsp" method="post">
-    <input type="submit" name="register" id="register" value="Clientes">
+   <form class="login-container" action="/TiendaVirtualApp/ConsultaProductos.jsp" method="post">
+    <input type="submit" name="update" id="update" value="Consultar Productos">
   </form>
-     <form class="login-container" action="/GestProveedor.jsp" method="post">
-    <input type="submit" name="register" id="register" value="Proveedores">
+   <form class="login-container" action="/TiendaVirtualApp/actProductos.jsp" method="post">
+    <input type="submit" name="update" id="update" value="Actualizar/Eliminar Productos">
   </form>
-   <form class="login-container" action="/TiendaVirtualPrototipo1/Productos.jsp" method="post">
-    <input type="submit" name="register" id="register" value="Productos">
-  </form>
-     <form class="login-container" action="/TiendaVirtualPrototipo1/Ventas.jsp" method="post">
-    <input type="submit" name="register" id="register" value="Ventas">
-  </form>
-     <form class="login-container" action="/TiendaVirtualPrototipo1/LogOut" method="post" onsubmit="return confirm ('Gracias por usar nuestra tienda virtual')">
-    <input type="submit" name="register" id="register" value="Cerrar Sesión">
+     <form class="login-container" action="/TiendaVirtualApp/home.jsp" method="post">
+    <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>
   

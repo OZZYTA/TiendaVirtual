@@ -115,7 +115,7 @@ body {
 			cedula = "null";
 		}
 		var http = new XMLHttpRequest();
-		var url = 'http://localhost:8080/consultarClientes';
+		var url = 'http://localhost:8080/TiendaVirtualApp/consultarClientes';
 		var params = "cedula=" + cedula;
 		http.open('POST', url, true);
 
@@ -125,7 +125,7 @@ body {
 
 		http.onreadystatechange = function() {//Call a function when the state changes.
 			if (http.readyState == 4 && http.status == 200) {
-				alert(http.responseText);
+				//alert(http.responseText);
 				CreateTableFromJSON(http.responseText);
 
 			}
@@ -193,7 +193,7 @@ body {
 		</tr>
 	</table>
 	<div id="dvResult"></div></div>
-	 <form class="login-container" action="/GestClientes.jsp" method="post">
+	 <br><form action="/TiendaVirtualApp/GestClientes.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>

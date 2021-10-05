@@ -97,7 +97,7 @@ body {
     </style>
 	
 <head>
-<title>Registro Clientes</title>
+<title>Registro Productos</title>
 <meta charset="utf-8">
 <style type="text/css">
 body {
@@ -107,22 +107,26 @@ body {
 </style>
 </head>
 
+
 <script>
 	function validateFields() {
-		if (document.getElementById("cedula").value.trim().length == 0) {
-			alert("La cedula no puede ser vacio.");
+		if (document.getElementById("codigo_producto").value.trim().length == 0) {
+			alert("El codigo no puede ser vacio.");
 			return false;
-		} else if (document.getElementById("nombre").value.trim().length == 0) {
+		} else if (document.getElementById("nombre_producto").value.trim().length == 0) {
 			alert("El nombre no puede ser vacio.");
 			return false;
-		} else if (document.getElementById("username").value.trim().length == 0) {
-			alert("El username no puede ser vacia.");
+		} else if (document.getElementById("nitproveedor").value.trim().length == 0) {
+			alert("El NIT no puede ser vacia.");
 			return false;
-		} else if (document.getElementById("password").value.trim().length == 0) {
-			alert("La password no puede ser vacio.");
+		} else if (document.getElementById("precio_compra").value.trim().length == 0) {
+			alert("El precio de compra no puede ser vacio.");
 			return false;
-		}  else if (document.getElementById("email").value.trim().length == 0) {
-			alert("El email no puede ser vacio.");
+		}  else if (document.getElementById("ivacompra").value.trim().length == 0) {
+			alert("El IVA de compra no puede ser vacio.");
+			return false;
+		}else if (document.getElementById("precio_venta").value.trim().length == 0) {
+			alert("El Precio de venta no puede ser vacio.");
 			return false;
 		}
 		else {
@@ -134,19 +138,20 @@ body {
 		if (validateFields()==false) {
 			return;
 		} else {
-			var cedula = document.getElementById("cedula").value.trim();
-			var nombre = document.getElementById("nombre").value.trim();
-			var username = document.getElementById("username").value.trim();
-			var password = document.getElementById("password").value.trim();
-			var email = document.getElementById("email").value.trim();
+			var codigo_producto = document.getElementById("codigo_producto").value.trim();
+			var nombre_producto = document.getElementById("nombre_producto").value.trim();
+			var nitproveedor = document.getElementById("nitproveedor").value.trim();
+			var precio_compra = document.getElementById("precio_compra").value.trim();
+			var ivacompra = document.getElementById("ivacompra").value.trim();
+			var precio_venta = document.getElementById("precio_venta").value.trim();
 
 			var http = new XMLHttpRequest();
-			var url = 'http://localhost:8080/TiendaVirtualApp/ingresarUsuario';
-			var params = "cedula=" + cedula + "&" + "nombre=" + nombre + "&"
-					+ "email=" + email + "&" + "username=" + username
-					+ "&" + "password=" + password;
+			var url = 'http://localhost:8080/TiendaVirtualApp/ingresarProducto';
+			var params = "codigo_producto=" + codigo_producto + "&" + "nombre_producto=" + nombre_producto + "&"
+					+ "nitproveedor=" + nitproveedor + "&" + "precio_compra=" + precio_compra
+					+ "&" + "ivacompra=" + ivacompra+ "&" + "precio_venta=" + precio_venta;
 			http.open('POST', url, true);
-			alert("Usuario Registrado");
+			alert("Producto Registrado");
 			//Send the proper header information along with the request
 			http.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 
@@ -160,21 +165,23 @@ body {
 	}
 </script>
 
+
 <body>
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Registrar Usuario</h2>
+  <h2 class="login-header">Registrar Producto</h2>
 
   <form class="registry-container">
-	<p><input type="number" name="cedula" id="cedula" placeholder="Cedula"></p>
-    <p><input type="text" name="nombre" id="nombre" placeholder="Nombre Completo"></p>
-    <p><input type="email" name="email" id="email" placeholder="Correo Electrónico"></p>
-    <p><input type="text" name="username" id="username" placeholder="Nombre de Usuario (Username)"></p>
-	<p><input type="password" name="password" id="password" placeholder="Contraseña"></p>
-     <p><td><button onclick="sendData()">Registrar Usuario</button></td>
+	  <p><input type="number" name="codigo" id="codigo_producto" placeholder="Codigo del Producto"></p>
+    <p><input type="text" name="nombre" id="nombre_producto" placeholder="Nombre del Producto"></p>
+    <p><input type="number" name="direccion" id="nitproveedor" placeholder="Nit del proveedor (sin digito de verificación)"></p>
+	  <p><input type="number" name="preciocompra" id="precio_compra" placeholder="Precio de compra"></p>
+	  <p><input type="number" name="iva" id="ivacompra" placeholder="IVA de compra"></p>
+	  <p><input type="number" name="precioventa" id="precio_venta" placeholder="Precio de Venta"></p>
+   <button onclick="sendData()">Registrar Producto</button></td>
   </form>
-    <form class="registry-container" action="/TiendaVirtualApp/GestUsuarios.jsp" method="post">
+     <form class="registry-container" action="/TiendaVirtualApp/GestProductos.jsp" method="post">
     <p><input type="submit" name="back" id="back" value="Atrás"></p>
     <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>
