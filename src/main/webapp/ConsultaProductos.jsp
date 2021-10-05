@@ -99,7 +99,7 @@ body {
     </style>
 <head>
 <meta charset="ISO-8859-1">
-<title>Consulta de Productos (Prueba de Github)</title>
+<title>Consulta de Productos</title>
 <meta charset="utf-8">
 <style type="text/css">
 body {
@@ -194,8 +194,8 @@ body {
 	</table>
 	<div id="dvResult"></div></div>
 	 <form action="/TiendaVirtualApp/GestProductos.jsp" method="post">
-    <input type="submit" name="back" id="back" value="Atrás">
-    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <input type="submit" name="back" id="back" value="AtrÃ¡s">
+    <br><p style="font-size:xx-small ">Ciclo 3 - MisiÃ³n TIC 2022 - Grupo 11</p>
   </form>
 </body>
 </html>
