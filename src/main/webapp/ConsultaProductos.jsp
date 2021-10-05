@@ -99,7 +99,7 @@ body {
     </style>
 <head>
 <meta charset="ISO-8859-1">
-<title>Consulta de Productos</title>
+<title>Consulta de Productos (Prueba de Github)</title>
 <meta charset="utf-8">
 <style type="text/css">
 body {
