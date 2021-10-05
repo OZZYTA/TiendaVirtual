@@ -1,5 +1,6 @@
 package edu.TiendaVirtual.TiendaVirtual;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -10,14 +11,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.tiendavirtual.DAO.ClienteDAO;
+import com.tiendavirtual.DAO.ProductosDAO;
 import com.tiendavirtual.DAO.ProveedorDAO;
 //import com.tiendavirtual.DAO.ProveedorDAO;
 import com.tiendavirtual.DAO.UserDAO;
 import com.tiendavirtual.DTO.Cliente;
+import com.tiendavirtual.DTO.Productos;
 import com.tiendavirtual.DTO.Proveedor;
 //import com.tiendavirtual.DTO.Proveedor;
 import com.tiendavirtual.DTO.User;
@@ -48,6 +56,13 @@ public class VirtualStoreRESTController {
 		return "Proveedor Registrado";		
 	}
 	
+	@RequestMapping("/registrarProducto")
+	public String registrarProducto(Productos p) {		
+		ProductosDAO dao = new ProductosDAO();
+		dao.insertProducto(p);
+		return "Producto Registrado";		
+	}
+	
 	@RequestMapping("/consultarProveedores")
 	public ArrayList<Proveedor> consultarProveedores(String nit) {		
 		ProveedorDAO dao = new ProveedorDAO();
@@ -64,6 +79,12 @@ public class VirtualStoreRESTController {
 	public ArrayList<Cliente> consultarClientes(String cedula) {		
 		ClienteDAO dao= new ClienteDAO();
 		return dao.consultarClientes(cedula);
+	}
+	
+	@RequestMapping("/consultarProductos")
+	public ArrayList<Productos> consultarProductos(int codigo_producto) {		
+		ProductosDAO dao = new ProductosDAO();
+		return dao.consultarProductos(codigo_producto);
 	}
 	
 	
@@ -89,5 +110,16 @@ public class VirtualStoreRESTController {
 		dao.listarProveedor();
 		return dao.listarProveedor();
 	}
+	
+	@PostMapping("/upload") 
+	  public ResponseEntity<?> handleFileUpload( @RequestParam("file") MultipartFile file ) {
+	    String fileName = file.getOriginalFilename();
+	    try {
+	      file.transferTo( new File("C:\\ArchivosRecibidos\\" + fileName));
+	    } catch (Exception e) {
+	      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+	    } 
+	    return ResponseEntity.ok("File uploaded successfully.");
+	  }
 	
 }

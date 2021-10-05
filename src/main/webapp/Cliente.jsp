@@ -142,7 +142,7 @@ body {
 			var email = document.getElementById("email").value.trim();
 
 			var http = new XMLHttpRequest();
-			var url = 'http://localhost:8080/ingresarCliente';
+			var url = 'http://localhost:8080/TiendaVirtualApp/ingresarCliente';
 			var params = "cedula=" + cedula + "&" + "nombre=" + nombre + "&"
 					+ "direccion=" + direccion + "&" + "telefono=" + telefono
 					+ "&" + "email=" + email;
@@ -176,7 +176,7 @@ body {
 	  <p><input type="email" name="email" id="email" placeholder="Correo Electrónico"></p>
    <button onclick="sendData()">Enviar Datos</button></td>
   </form>
-     <form class="registry-container" action="/GestClientes.jsp" method="post">
+     <form class="registry-container" action="/TiendaVirtualApp/GestClientes.jsp" method="post">
     <p><input type="submit" name="back" id="back" value="Atrás"></p>
     <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>

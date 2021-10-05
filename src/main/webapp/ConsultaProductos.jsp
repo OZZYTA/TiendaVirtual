@@ -99,7 +99,7 @@ body {
     </style>
 <head>
 <meta charset="ISO-8859-1">
-<title>Consulta de Usuarios</title>
+<title>Consulta de Productos</title>
 <meta charset="utf-8">
 <style type="text/css">
 body {
@@ -110,13 +110,13 @@ body {
 </head>
 <script>
 	function consultar() {
-		var cedula = document.getElementById("cedula").value.trim();
-		if (cedula.trim() == "") {
-			cedula = "null";
+		var codigo = document.getElementById("codigo_producto").value.trim();
+		if (codigo.trim() == "") {
+			codigo = "null";
 		}
 		var http = new XMLHttpRequest();
-		var url = 'http://localhost:8080/TiendaVirtualApp/consultarUsuarios';
-		var params = "cedula=" + cedula;
+		var url = 'http://localhost:8080/TiendaVirtualApp/consultarProductos';
+		var params = "codigo_producto=" + codigo;
 		http.open('POST', url, true);
 
 		//Send the proper header information along with the request
@@ -167,7 +167,7 @@ body {
 
 			tr = table.insertRow(-1);
 
-			for (var j = 1; j < (col.length-1); j++) {
+			for (var j = 1; j < (col.length); j++) {
 				var tabCell = tr.insertCell(-1);
 				tabCell.innerHTML = json_arr[i][col[j]];
 			}
@@ -184,16 +184,16 @@ body {
 <div class="login">
  
   
-	<h2 class="login-header">Consulta de Usuarios</h2>
+	<h2 class="login-header">Consulta de Productos</h2>
 	<table>
 		<tr>
-			<td><label for="cedula">Cedula:</label></td>
-			<td><input type="text" id="cedula" name="cedula"></td>
+			<td><label for="cedula">Codigo de Producto:</label></td>
+			<td><input type="text" id="codigo" name="codigo_producto"></td>
 			<td><button onclick="consultar()">Consultar</button></td>
 		</tr>
 	</table>
 	<div id="dvResult"></div></div>
-	 <form action="/TiendaVirtualApp/GestUsuarios.jsp" method="post">
+	 <form action="/TiendaVirtualApp/GestProductos.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>

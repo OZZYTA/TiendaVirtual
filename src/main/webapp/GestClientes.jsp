@@ -118,16 +118,16 @@ body {
   
   <h2 class="login-header">Gestión Clientes<br>Tienda Virtual UElBosque</h2>
 
-  <form class="login-container" action="/Cliente.jsp" method="post">
+  <form class="login-container" action="/TiendaVirtualApp/Cliente.jsp" method="post">
     <input type="submit" name="create" id="create" value="Crear Cliente">
   </form>
-   <form class="login-container" action="/ConsultaClientes.jsp" method="post">
+   <form class="login-container" action="/TiendaVirtualApp/ConsultaClientes.jsp" method="post">
     <input type="submit" name="update" id="update" value="Consultar Clientes">
   </form>
-   <form class="login-container" action="/actClientes.jsp" method="post">
+   <form class="login-container" action="/TiendaVirtualApp/actClientes.jsp" method="post">
     <input type="submit" name="update" id="update" value="Actualizar/Eliminar Cliente">
   </form>
-     <form class="login-container" action="home.jsp" method="post">
+     <form class="login-container" action="/TiendaVirtualApp/home.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>
