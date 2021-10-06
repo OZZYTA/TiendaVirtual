@@ -146,7 +146,7 @@ body {
 			var precio_venta = document.getElementById("precio_venta").value.trim();
 
 			var http = new XMLHttpRequest();
-			var url = 'http://localhost:8080/TiendaVirtualApp/ingresarProducto';
+			var url = 'http://localhost:8080/TiendaVirtualApp/registrarProducto';
 			var params = "codigo_producto=" + codigo_producto + "&" + "nombre_producto=" + nombre_producto + "&"
 					+ "nitproveedor=" + nitproveedor + "&" + "precio_compra=" + precio_compra
 					+ "&" + "ivacompra=" + ivacompra+ "&" + "precio_venta=" + precio_venta;

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: tienda_virtual
+-- Host: localhost    Database: tienda_virtual
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -46,6 +46,33 @@ INSERT INTO `clientes` VALUES (3,123456,'Lola Dolores','Cucuta',5483726,'correo@
 UNLOCK TABLES;
 
 --
+-- Table structure for table `detalleventas`
+--
+
+DROP TABLE IF EXISTS `detalleventas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `detalleventas` (
+  `iddetalle` int NOT NULL,
+  `codigo_venta` int NOT NULL,
+  `cantidad` int NOT NULL,
+  `codigo_productos` varchar(100) NOT NULL,
+  `valor_unitario` double NOT NULL,
+  `valor_total` double NOT NULL,
+  PRIMARY KEY (`iddetalle`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `detalleventas`
+--
+
+LOCK TABLES `detalleventas` WRITE;
+/*!40000 ALTER TABLE `detalleventas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `detalleventas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `productos`
 --
 
@@ -62,7 +89,7 @@ CREATE TABLE `productos` (
   `precio_venta` double NOT NULL,
   PRIMARY KEY (`idproductos`),
   UNIQUE KEY `codigo_producto_UNIQUE` (`codigo_producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,6 +98,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
+INSERT INTO `productos` VALUES (1,54616,'Zapato Rojo',807002448,25000,14,35000),(2,521234,'CAMISA AMARILLA',807002448,25000,12,35000),(3,32161,'Cebolla',5463293,19000,10,120000),(4,56161,'Gaseosa',3134570217,3000,4,4200),(5,32163,'Pollo',807002448,8000,0,8600);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,6 +158,33 @@ LOCK TABLES `usuarios` WRITE;
 INSERT INTO `usuarios` VALUES (1,1090403376,'Natali Velasquez','ozzyta1@gmail.com','ozzyta','12345'),(2,152648,'Usuario 1','correo1@mail.com','user1','12345'),(3,987654,'Usuario 2','user2@mail.com','user2','12345'),(4,562134,'Usuario 3','user3@mail.com','user3','12345'),(5,27837033,'Natalia Torres','toto@com.com','natonato','12345'),(6,88456233,'Catalina Rojas','catarojas@gmail.com','catarojas','12345');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `ventas`
+--
+
+DROP TABLE IF EXISTS `ventas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ventas` (
+  `codigo_venta` int NOT NULL AUTO_INCREMENT,
+  `cedula_cliente` bigint NOT NULL,
+  `cedula_usuario` bigint NOT NULL,
+  `valor_venta` double NOT NULL,
+  `valor_iva` double NOT NULL,
+  `valor_total` double NOT NULL,
+  PRIMARY KEY (`codigo_venta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ventas`
+--
+
+LOCK TABLES `ventas` WRITE;
+/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -140,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-05 10:17:19
+-- Dump completed on 2021-10-06 17:09:11

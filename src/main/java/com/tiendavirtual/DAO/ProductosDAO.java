@@ -1,6 +1,13 @@
 package com.tiendavirtual.DAO;
 
 import java.sql.ResultSet;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -29,13 +36,12 @@ public class ProductosDAO {
 	}
 	
 	
-	public ArrayList<Productos> consultarProductos(int codigo_producto) {
+	public ArrayList<Productos> consultarProductos(long codigo_producto) {
 		ArrayList<Productos> producto = new ArrayList<Productos>();
 		Conexion conex = new Conexion();
 
 		String sql = "SELECT * FROM productos ";
-		String codigo= Integer.toString(codigo_producto);
-		if (!codigo.trim().equals("null")) {
+		if (!(codigo_producto==0)) {
 			sql = sql + "WHERE codigo_producto = '" + codigo_producto + "'";
 		}
 
@@ -44,9 +50,9 @@ public class ProductosDAO {
 			ResultSet res = consulta.executeQuery(sql);
 
 			while (res.next()) {
-				Productos pro = new Productos(res.getInt("codigo_producto"), res.getString("nombre_producto"),
-						res.getInt("nitproveedor"), res.getInt("precio_compra"), res.getInt("ivacompra"),
-						res.getInt("precio_venta"));
+				Productos pro = new Productos(res.getLong("codigo_producto"), res.getString("nombre_producto"),
+						res.getLong("nitproveedor"), res.getDouble("precio_compra"), res.getDouble("ivacompra"),
+						res.getDouble("precio_venta"));
 				producto.add(pro);
 			}
 			res.close();
@@ -58,6 +64,29 @@ public class ProductosDAO {
 		}
 		return producto;
 	}
+	
+	public void FileUpload (File archivo){
+		try {
+			FileReader fr=new FileReader(archivo);
+			BufferedReader br= new BufferedReader(fr);
+			String linea="";
+			while((linea=br.readLine())!=null) {
+				String[] tokens=linea.split(",");
+				Productos P = new Productos(Long.parseLong(tokens[1]),tokens[2],Long.parseLong(tokens[3]),Double.parseDouble(tokens[4]),Double.parseDouble(tokens[5]),Double.parseDouble(tokens[6]));
+				insertProducto(P);
+			}
+			br.close();
+			fr.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
 
 
 }

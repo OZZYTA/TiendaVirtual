@@ -127,7 +127,7 @@ body {
    <form class="login-container" action="/TiendaVirtualApp/actUsuarios.jsp" method="post">
     <input type="submit" name="update" id="update" value="Actualizar/Eliminar Proveedores">
   </form>
-     <form class="login-container" action="/TiendaVirtualApp/home.jsp" method="post">
+     <form class="login-container" action="/TiendaVirtualApp/index.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>
