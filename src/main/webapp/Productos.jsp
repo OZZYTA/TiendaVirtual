@@ -175,7 +175,7 @@ body {
   <form class="registry-container">
 	  <p><input type="number" name="codigo" id="codigo_producto" placeholder="Codigo del Producto"></p>
     <p><input type="text" name="nombre" id="nombre_producto" placeholder="Nombre del Producto"></p>
-    <p><input type="number" name="direccion" id="nitproveedor" placeholder="Nit del proveedor (sin digito de verificación)"></p>
+    <p><input type="number" name="nit" id="nitproveedor" placeholder="Nit del proveedor (sin digito de verificación)"></p>
 	  <p><input type="number" name="preciocompra" id="precio_compra" placeholder="Precio de compra"></p>
 	  <p><input type="number" name="iva" id="ivacompra" placeholder="IVA de compra"></p>
 	  <p><input type="number" name="precioventa" id="precio_venta" placeholder="Precio de Venta"></p>
