@@ -124,10 +124,10 @@ body {
    <form class="login-container" action="/TiendaVirtualApp/ConsultaProductos.jsp" method="post">
     <input type="submit" name="update" id="update" value="Consultar Productos">
   </form>
-   <form class="login-container" action="/TiendaVirtualApp/actProductos.jsp" method="post">
-    <input type="submit" name="update" id="update" value="Actualizar/Eliminar Productos">
+   <form class="login-container" action="/TiendaVirtualApp/CargueMasivoProducto.jsp" method="post">
+    <input type="submit" name="update" id="update" value="Cargue Masivo de Productos">
   </form>
-     <form class="login-container" action="/TiendaVirtualApp/home.jsp" method="post">
+     <form class="login-container" action="/TiendaVirtualApp/index.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>

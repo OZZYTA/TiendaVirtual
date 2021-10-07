@@ -82,7 +82,7 @@ public class VirtualStoreRESTController {
 	}
 	
 	@RequestMapping("/consultarProductos")
-	public ArrayList<Productos> consultarProductos(int codigo_producto) {		
+	public ArrayList<Productos> consultarProductos(long codigo_producto) {		
 		ProductosDAO dao = new ProductosDAO();
 		return dao.consultarProductos(codigo_producto);
 	}
@@ -115,11 +115,15 @@ public class VirtualStoreRESTController {
 	  public ResponseEntity<?> handleFileUpload( @RequestParam("file") MultipartFile file ) {
 	    String fileName = file.getOriginalFilename();
 	    try {
-	      file.transferTo( new File("C:\\ArchivosRecibidos\\" + fileName));
+	      File f = new File("C:\\ArchivosRecibidos\\" + fileName);
+	      file.transferTo(f);
+	      ProductosDAO dao= new ProductosDAO();
+		  dao.FileUpload(f);
 	    } catch (Exception e) {
 	      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 	    } 
-	    return ResponseEntity.ok("File uploaded successfully.");
+	    return ResponseEntity.ok("Archivo Cargado correctamente");
 	  }
+	
 	
 }

@@ -2,7 +2,6 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<html>
 <style type="text/css">
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
@@ -14,7 +13,7 @@ body {
 
 .login {
   margin: auto;
-  width: 50%;
+  width: 60%;
   border: 3px solid blue;
   padding: 10px;
 }
@@ -112,7 +111,7 @@ body {
 	function consultar() {
 		var codigo = document.getElementById("codigo_producto").value.trim();
 		if (codigo.trim() == "") {
-			codigo = "null";
+			codigo = 0;
 		}
 		var http = new XMLHttpRequest();
 		var url = 'http://localhost:8080/TiendaVirtualApp/consultarProductos';
@@ -156,7 +155,7 @@ body {
 		var tr = table.insertRow(-1); // TABLE ROW.
 		
 
-		for (var i = 1; i < (col.length-1); i++) {
+		for (var i = 1; i < (col.length); i++) {
 			var th = document.createElement("th"); // TABLE HEADER.
 			th.innerHTML = col[i];
 			tr.appendChild(th);
@@ -188,14 +187,14 @@ body {
 	<table>
 		<tr>
 			<td><label for="cedula">Codigo de Producto:</label></td>
-			<td><input type="text" id="codigo" name="codigo_producto"></td>
+			<td><input type="number" id="codigo_producto" name="codigo_producto"></td>
 			<td><button onclick="consultar()">Consultar</button></td>
 		</tr>
 	</table>
 	<div id="dvResult"></div></div>
 	 <form action="/TiendaVirtualApp/GestProductos.jsp" method="post">
-    <input type="submit" name="back" id="back" value="AtrÃ¡s">
-    <br><p style="font-size:xx-small ">Ciclo 3 - MisiÃ³n TIC 2022 - Grupo 11</p>
+    <input type="submit" name="back" id="back" value="Atrás">
+    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
   </form>
 </body>
 </html>
