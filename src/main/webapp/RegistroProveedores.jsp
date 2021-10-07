@@ -163,7 +163,7 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Registro de Provedores</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Registro de Provedores</h2>
  <form class="registry-container">
 	<p><input type="text" name="NIT" id="txtNIT" placeholder="NIT"></p>
     <p><input type="text" name="nombre" id="txtNombre" placeholder="Nombre Completo"></p>
@@ -175,7 +175,7 @@ body {
   </form>
     <form class="registry-container" action="/TiendaVirtualApp/GestProveedor.jsp" method="post">
     <p><input type="submit" name="back" id="back" value="Atrás"></p>
-    <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
 </div></div>
 </body>

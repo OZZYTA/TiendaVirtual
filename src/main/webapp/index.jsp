@@ -117,7 +117,7 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Gestiones<br>Tienda Virtual UElBosque</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Gestiones</h2>
 
   <form class="login-container" action="/TiendaVirtualApp/GestUsuarios.jsp" method="post">
     <input type="submit" name="register" id="register" value="Usuarios">
@@ -136,7 +136,7 @@ body {
   </form>
      <form class="login-container" action="/TiendaVirtualApp/LogOut" method="post" onsubmit="return confirm ('Gracias por usar nuestra tienda virtual')">
     <input type="submit" name="register" id="register" value="Cerrar Sesión">
-    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
   
  

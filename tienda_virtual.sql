@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: localhost    Database: tienda_virtual
+-- Host: 127.0.0.1    Database: tienda_virtual
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -24,15 +24,15 @@ DROP TABLE IF EXISTS `clientes`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `clientes` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `cedula` int NOT NULL,
+  `cedula` varchar(15) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `direccion` varchar(100) NOT NULL,
-  `telefono` int NOT NULL,
+  `telefono` varchar(15) NOT NULL,
   `email` varchar(45) NOT NULL,
   PRIMARY KEY (`cedula`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `cedula_UNIQUE` (`cedula`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (3,123456,'Lola Dolores','Cucuta',5483726,'correo@correo.com'),(5,6754877,'Natalia Torres','CALLE 5 13E-05 OF. 104 COLSAG',5872485,'ozzyta01@gmail.com'),(2,27837033,'Edic Mendoza','CALLE 5 13E-05 OF. 104 COLSAG',5489,'ozzy_natali@outlook.com'),(4,807002448,'JOSE LUIS YAÑEZ','CUCUTA',54827,'joya@hotmail.com'),(1,1090403376,'Natali','csa',63266,'ozzyta@ozzyta.com');
+INSERT INTO `clientes` VALUES (1,'1090403376','Natali','csa','63266','ozzyta@ozzyta.com'),(6,'1090403377','Toronto Canada','Pamplona','341314135','toro@com.co'),(3,'123456','Lola Dolores','Cucuta','5483726','correo@correo.com'),(2,'27837033','Edic Mendoza','CALLE 5 13E-05 OF. 104 COLSAG','5489','ozzy_natali@outlook.com'),(5,'6754877','Natalia Torres','CALLE 5 13E-05 OF. 104 COLSAG','5872485','ozzyta01@gmail.com'),(4,'807002448','JOSE LUIS YAÑEZ','CUCUTA','54827','joya@hotmail.com');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,13 +140,13 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `cedula` int NOT NULL,
+  `cedula` varchar(15) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
   `username` varchar(45) NOT NULL,
   `password` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +155,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,1090403376,'Natali Velasquez','ozzyta1@gmail.com','ozzyta','12345'),(2,152648,'Usuario 1','correo1@mail.com','user1','12345'),(3,987654,'Usuario 2','user2@mail.com','user2','12345'),(4,562134,'Usuario 3','user3@mail.com','user3','12345'),(5,27837033,'Natalia Torres','toto@com.com','natonato','12345'),(6,88456233,'Catalina Rojas','catarojas@gmail.com','catarojas','12345');
+INSERT INTO `usuarios` VALUES (1,'1090403376','Natali Velasquez','ozzyta1@gmail.com','ozzyta','12345'),(2,'152648','Usuario 1','correo1@mail.com','user1','12345'),(3,'987654','Usuario 2','user2@mail.com','user2','12345'),(4,'562134','Usuario 3','user3@mail.com','user3','12345'),(5,'27837033','Natalia Torres','toto@com.com','natonato','12345'),(6,'88456233','Catalina Rojas','catarojas@gmail.com','catarojas','12345'),(7,'2352532','Grissell del Valle','gris@com.com','grissi','12345');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,8 +168,8 @@ DROP TABLE IF EXISTS `ventas`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ventas` (
   `codigo_venta` int NOT NULL AUTO_INCREMENT,
-  `cedula_cliente` bigint NOT NULL,
-  `cedula_usuario` bigint NOT NULL,
+  `cedula_cliente` varchar(15) NOT NULL,
+  `cedula_usuario` varchar(15) NOT NULL,
   `valor_venta` double NOT NULL,
   `valor_iva` double NOT NULL,
   `valor_total` double NOT NULL,
@@ -195,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-06 17:09:11
+-- Dump completed on 2021-10-07  9:11:25

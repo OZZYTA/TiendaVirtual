@@ -116,7 +116,7 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Gestión Usuarios<br>Tienda Virtual UElBosque</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Gestión Usuarios</h2>
 
   <form class="login-container" action="/TiendaVirtualApp/Usuarios.jsp" method="post">
     <input type="submit" name="create" id="create" value="Crear Usuarios">
@@ -129,7 +129,7 @@ body {
   </form>
      <form class="login-container" action="/TiendaVirtualApp/index.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
-    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
   
  

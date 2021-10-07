@@ -170,7 +170,7 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Registrar Producto</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Registrar Producto</h2>
 
   <form class="registry-container">
 	  <p><input type="number" name="codigo" id="codigo_producto" placeholder="Codigo del Producto"></p>
@@ -183,7 +183,7 @@ body {
   </form>
      <form class="registry-container" action="/TiendaVirtualApp/GestProductos.jsp" method="post">
     <p><input type="submit" name="back" id="back" value="Atrás"></p>
-    <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
 </div>
 </body>

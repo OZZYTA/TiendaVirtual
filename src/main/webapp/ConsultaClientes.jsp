@@ -184,7 +184,7 @@ body {
 <div class="login">
  
   
-	<h2 class="login-header">Consulta de Clientes</h2>
+	<h2 class="login-header"><img src="assets/logo.png"><br>Consulta de Clientes</h2>
 	<table>
 		<tr>
 			<td><label for="cedula">No. de Cédula:</label></td>
@@ -195,7 +195,7 @@ body {
 	<div id="dvResult"></div></div>
 	 <br><form action="/TiendaVirtualApp/GestClientes.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
-    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
 </body>
 </html>
