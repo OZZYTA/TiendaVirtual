@@ -141,7 +141,7 @@ body {
 			var email = document.getElementById("email").value.trim();
 
 			var http = new XMLHttpRequest();
-			var url = 'http://localhost:8080/TiendaVirtualApp/ingresarUsuario';
+			var url = '/Grupo11Cucuta/ingresarUsuario';
 			var params = "cedula=" + cedula + "&" + "nombre=" + nombre + "&"
 					+ "email=" + email + "&" + "username=" + username
 					+ "&" + "password=" + password;
@@ -164,7 +164,7 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Registrar Usuario</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Registrar Usuario</h2>
 
   <form class="registry-container">
 	<p><input type="number" name="cedula" id="cedula" placeholder="Cedula"></p>
@@ -174,9 +174,9 @@ body {
 	<p><input type="password" name="password" id="password" placeholder="Contraseña"></p>
      <p><td><button onclick="sendData()">Registrar Usuario</button></td>
   </form>
-    <form class="registry-container" action="/TiendaVirtualApp/GestUsuarios.jsp" method="post">
+    <form class="registry-container" action="/Grupo11Cucuta/GestUsuarios.jsp" method="post">
     <p><input type="submit" name="back" id="back" value="Atrás"></p>
-    <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
 </div>
 </body>

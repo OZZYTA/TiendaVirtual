@@ -117,26 +117,26 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Gestiones<br>Tienda Virtual UElBosque</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Gestiones</h2>
 
-  <form class="login-container" action="/TiendaVirtualApp/GestUsuarios.jsp" method="post">
+  <form class="login-container" action="/Grupo11Cucuta/GestUsuarios.jsp" method="post">
     <input type="submit" name="register" id="register" value="Usuarios">
   </form>
-   <form class="login-container" action="/TiendaVirtualApp/GestClientes.jsp" method="post">
+   <form class="login-container" action="/Grupo11Cucuta/GestClientes.jsp" method="post">
     <input type="submit" name="register" id="register" value="Clientes">
   </form>
-     <form class="login-container" action="/TiendaVirtualApp/GestProveedor.jsp" method="post">
+     <form class="login-container" action="/Grupo11Cucuta/GestProveedor.jsp" method="post">
     <input type="submit" name="register" id="register" value="Proveedores">
   </form>
-   <form class="login-container" action="/TiendaVirtualApp/GestProductos.jsp" method="post">
+   <form class="login-container" action="/Grupo11Cucuta/GestProductos.jsp" method="post">
     <input type="submit" name="register" id="register" value="Productos">
   </form>
-     <form class="login-container" action="/TiendaVirtualApp/Ventas.jsp" method="post">
+     <form class="login-container" action="/Grupo11Cucuta/Ventas.jsp" method="post">
     <input type="submit" name="register" id="register" value="Ventas">
   </form>
-     <form class="login-container" action="/TiendaVirtualApp/LogOut" method="post" onsubmit="return confirm ('Gracias por usar nuestra tienda virtual')">
+     <form class="login-container" action="/Grupo11Cucuta/LogOut" method="post" onsubmit="return confirm ('Gracias por usar nuestra tienda virtual')">
     <input type="submit" name="register" id="register" value="Cerrar Sesión">
-    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
   
  

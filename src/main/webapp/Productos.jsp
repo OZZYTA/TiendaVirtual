@@ -146,7 +146,7 @@ body {
 			var precio_venta = document.getElementById("precio_venta").value.trim();
 
 			var http = new XMLHttpRequest();
-			var url = 'http://localhost:8080/TiendaVirtualApp/registrarProducto';
+			var url = '/Grupo11Cucuta/registrarProducto';
 			var params = "codigo_producto=" + codigo_producto + "&" + "nombre_producto=" + nombre_producto + "&"
 					+ "nitproveedor=" + nitproveedor + "&" + "precio_compra=" + precio_compra
 					+ "&" + "ivacompra=" + ivacompra+ "&" + "precio_venta=" + precio_venta;
@@ -170,7 +170,7 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Registrar Producto</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Registrar Producto</h2>
 
   <form class="registry-container">
 	  <p><input type="number" name="codigo" id="codigo_producto" placeholder="Codigo del Producto"></p>
@@ -181,9 +181,9 @@ body {
 	  <p><input type="number" name="precioventa" id="precio_venta" placeholder="Precio de Venta"></p>
    <button onclick="sendData()">Registrar Producto</button></td>
   </form>
-     <form class="registry-container" action="/TiendaVirtualApp/GestProductos.jsp" method="post">
+     <form class="registry-container" action="/Grupo11Cucuta/GestProductos.jsp" method="post">
     <p><input type="submit" name="back" id="back" value="Atrás"></p>
-    <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
 </div>
 </body>

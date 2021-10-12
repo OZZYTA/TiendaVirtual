@@ -116,20 +116,20 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Gestión Proveedores<br>Tienda Virtual UElBosque</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Gestión Proveedores</h2>
 
-  <form class="login-container" action="/TiendaVirtualApp/RegistroProveedores.jsp" method="post">
+  <form class="login-container" action="/Grupo11Cucuta/RegistroProveedores.jsp" method="post">
     <input type="submit" name="create" id="create" value="Registrar Proveedores">
   </form>
-   <form class="login-container" action="/TiendaVirtualApp/ConsultaProveedores.jsp" method="post">
+   <form class="login-container" action="/Grupo11Cucuta/ConsultaProveedores.jsp" method="post">
     <input type="submit" name="update" id="update" value="Consultar Proveedores">
   </form>
-   <form class="login-container" action="/TiendaVirtualApp/actUsuarios.jsp" method="post">
+   <form class="login-container" action="/Grupo11Cucuta/actUsuarios.jsp" method="post">
     <input type="submit" name="update" id="update" value="Actualizar/Eliminar Proveedores">
   </form>
-     <form class="login-container" action="/TiendaVirtualApp/index.jsp" method="post">
+     <form class="login-container" action="/Grupo11Cucuta/index.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
-    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+    <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
   
  

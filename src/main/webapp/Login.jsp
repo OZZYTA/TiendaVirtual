@@ -126,7 +126,7 @@ body {
 			var password = document.getElementById("password").value.trim();
 
 			var http = new XMLHttpRequest();
-			var url = 'http://localhost:8080/TiendaVirtualApp/login';
+			var url = '/Grupo11Cucuta/login';
 			var params = "username=" + username + "&" + "password=" + password;
 			http.open('POST', url, true);
 
@@ -146,13 +146,13 @@ body {
 <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Iniciar Sesión - Tienda Virtual UElBosque</h2>
+  <h2 class="login-header"><img src="assets/logo.png"><br>Iniciar Sesión</h2>
 
   <form class="login-container">
     <p><input type="text" name="username" id="username" placeholder="Usuario"></p>
     <p><input type="password" name="password" id="password" placeholder="Contraseña"></p>
     <p><td><button onclick="sendData()">Iniciar Sesión</button></td>
-     <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11</p>
+     <p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
   
 </div>
