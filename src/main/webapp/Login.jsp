@@ -126,7 +126,7 @@ body {
 			var password = document.getElementById("password").value.trim();
 
 			var http = new XMLHttpRequest();
-			var url = 'http://localhost:8080/TiendaVirtualApp/login';
+			var url = '/Grupo11Cucuta/login';
 			var params = "username=" + username + "&" + "password=" + password;
 			http.open('POST', url, true);
 

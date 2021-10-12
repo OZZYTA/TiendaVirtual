@@ -114,7 +114,7 @@ body {
 			codigo = 0;
 		}
 		var http = new XMLHttpRequest();
-		var url = 'http://localhost:8080/TiendaVirtualApp/consultarProductos';
+		var url = '/Grupo11Cucuta/consultarProductos';
 		var params = "codigo_producto=" + codigo;
 		http.open('POST', url, true);
 
@@ -192,7 +192,7 @@ body {
 		</tr>
 	</table>
 	<div id="dvResult"></div></div>
-	 <form action="/TiendaVirtualApp/GestProductos.jsp" method="post">
+	 <form action="/Grupo11Cucuta/GestProductos.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>

@@ -119,7 +119,7 @@ body {
 async function CargarArchivo() {
   let formData = new FormData(); 
   formData.append("file", fileupload.files[0]);
-  let response = await fetch('/TiendaVirtualApp/upload', {
+  let response = await fetch('/Grupo11Cucuta/upload', {
     method: "POST", 
     body: formData
   }); 
@@ -140,7 +140,7 @@ async function CargarArchivo() {
 		<tr>
     <input id="fileupload" type="file" name="fileupload" /> 
     <button id="btnUpload" onclick="CargarArchivo()">Subir Archivo </button>
- <form action="/TiendaVirtualApp/GestProductos.jsp" method="post">
+ <form action="/Grupo11Cucuta/GestProductos.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>

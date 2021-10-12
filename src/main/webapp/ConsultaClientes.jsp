@@ -115,7 +115,7 @@ body {
 			cedula = "null";
 		}
 		var http = new XMLHttpRequest();
-		var url = 'http://localhost:8080/TiendaVirtualApp/consultarClientes';
+		var url = '/Grupo11Cucuta/consultarClientes';
 		var params = "cedula=" + cedula;
 		http.open('POST', url, true);
 
@@ -193,7 +193,7 @@ body {
 		</tr>
 	</table>
 	<div id="dvResult"></div></div>
-	 <br><form action="/TiendaVirtualApp/GestClientes.jsp" method="post">
+	 <br><form action="/Grupo11Cucuta/GestClientes.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>

@@ -118,16 +118,16 @@ body {
   
   <h2 class="login-header"><img src="assets/logo.png"><br>Gestión Usuarios</h2>
 
-  <form class="login-container" action="/TiendaVirtualApp/Usuarios.jsp" method="post">
+  <form class="login-container" action="/Grupo11Cucuta/Usuarios.jsp" method="post">
     <input type="submit" name="create" id="create" value="Crear Usuarios">
   </form>
-   <form class="login-container" action="/TiendaVirtualApp/ConsultaUsuarios.jsp" method="post">
+   <form class="login-container" action="/Grupo11Cucuta/ConsultaUsuarios.jsp" method="post">
     <input type="submit" name="create" id="create" value="Consultar Usuarios">
   </form>
-   <form class="login-container" action="/TiendaVirtualApp/actUsuarios.jsp" method="post">
+   <form class="login-container" action="/Grupo11Cucuta/actUsuarios.jsp" method="post">
     <input type="submit" name="update" id="update" value="Actualizar/Eliminar Usuarios">
   </form>
-     <form class="login-container" action="/TiendaVirtualApp/index.jsp" method="post">
+     <form class="login-container" action="/Grupo11Cucuta/index.jsp" method="post">
     <input type="submit" name="back" id="back" value="Atrás">
     <br><p style="font-size:xx-small ">Ciclo 3 - Misión TIC 2022 - Grupo 11 - Cúcuta</p>
   </form>
