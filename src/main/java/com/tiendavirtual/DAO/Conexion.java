@@ -23,7 +23,7 @@ public class Conexion {
 		Connection con=null;
 		
 		try {
-			//Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection(url, login, pass);
 			if (con != null) {
 				System.out.println("Conexion a base de datos" + bd + " OK\n");

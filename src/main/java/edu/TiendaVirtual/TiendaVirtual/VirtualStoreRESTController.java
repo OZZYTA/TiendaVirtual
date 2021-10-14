@@ -1,10 +1,12 @@
 package edu.TiendaVirtual.TiendaVirtual;
 
 import java.io.File;
+import java.util.List;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,10 +17,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.tiendavirtual.DAO.Ajax;
 import com.tiendavirtual.DAO.ClienteDAO;
 import com.tiendavirtual.DAO.ProductosDAO;
 import com.tiendavirtual.DAO.ProveedorDAO;
@@ -124,6 +128,16 @@ public class VirtualStoreRESTController {
 	    } 
 	    return ResponseEntity.ok("Archivo Cargado correctamente");
 	  }
+	
+	@RequestMapping("/ventasProductos")
+	public ArrayList<Productos> ventasProductos() {
+		Ajax dao= new Ajax();
+		dao.productosVentas();
+		return dao.productosVentas();
+	}
+	
+	
+	
 	
 	
 }
