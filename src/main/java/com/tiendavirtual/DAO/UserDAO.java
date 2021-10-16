@@ -10,68 +10,92 @@ import com.tiendavirtual.DTO.Proveedor;
 import com.tiendavirtual.DTO.User;
 
 public class UserDAO {
-	
+
 	public void insertUser(User user) {
-		Conexion con= new Conexion();
-		
+		Conexion con = new Conexion();
+
 		Statement stat;
 		try {
 			stat = con.getConecction().createStatement();
-			stat.executeUpdate("INSERT INTO usuarios(cedula, email, nombre, password, username) VALUES (" + "'" + user.getCedula() + "'" + ","
-					+ "'" + user.getEmail() + "'" + ","
-					+ "'" + user.getNombre() + "'" + ","
-					+ "'" + user.getPassword() + "'" + ","
-					+ "'" + user.getUsername() + "'" + ")");
+			stat.executeUpdate("INSERT INTO usuarios(cedula, email, nombre, password, username) VALUES (" + "'"
+					+ user.getCedula() + "'" + "," + "'" + user.getEmail() + "'" + "," + "'" + user.getNombre() + "'"
+					+ "," + "'" + user.getPassword() + "'" + "," + "'" + user.getUsername() + "'" + ")");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public void actualizarUsuario(User user) {
+
+		Conexion con = new Conexion();
+		Statement stmt;
+		try {
+			stmt = con.getConecction().createStatement();
+			stmt.executeUpdate(" UPDATE usuarios SET nombre = " + "'" + user.getNombre() + "'" + ","
+					+ " email = " + "'" + user.getEmail() + "'" + "," + " username =" + "'" + user.getUsername() + "'"
+					+ "," + " password = " + "'" + user.getPassword() + "'" + " WHERE cedula = " + "'"
+					+ user.getCedula() + "'");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+	}
 		
-	}
 	
-	public User updateUser(String cedula) {
-	return null;
-	}
-	
+		
+
 	public void searchUser() {
+
+	}
+
+public void eliminarUsuario(String cedula) {
 		
-	}
- 
-	public User deleteUser(String cedula) {
-		return null;		
-	}
-	
-	public ArrayList<User> listarUser(){
-		ArrayList<User> lstusers = new ArrayList<User>();
-		Conexion con= new Conexion();
+		Conexion con = new Conexion();
+
+		Statement stmt;
 		try {
-			PreparedStatement consulta= con.getConecction().prepareStatement("SELECT * FROM usuarios");
-			ResultSet res= consulta.executeQuery();
-			User registro= null;
+			stmt = con.getConecction().createStatement();
+			stmt.executeUpdate("DELETE FROM usuarios WHERE cedula = "+"'"+cedula+"'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public ArrayList<User> listarUser() {
+		ArrayList<User> lstusers = new ArrayList<User>();
+		Conexion con = new Conexion();
+		try {
+			PreparedStatement consulta = con.getConecction().prepareStatement("SELECT * FROM usuarios");
+			ResultSet res = consulta.executeQuery();
+			User registro = null;
 			while (res.next()) {
-				int ce= res.getInt(2);
-				String no=res.getString(3);
-				String em=res.getString(4);
-				String us=res.getString(5);
-				String pa=res.getString(6);
-				registro= new User(ce, no, em, us, pa);
+				int ce = res.getInt(2);
+				String no = res.getString(3);
+				String em = res.getString(4);
+				String us = res.getString(5);
+				String pa = res.getString(6);
+				registro = new User(ce, no, em, us, pa);
 				lstusers.add(registro);
 			}
 			res.close();
 			consulta.close();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println("NO HAY USUARIOS");
 		}
-		return lstusers;	
+		return lstusers;
 	}
-	
-	//Consultar Usuarios
+
+	// Consultar Usuarios
 	public ArrayList<User> consultarUsuarios(String cedula) {
 		ArrayList<User> usuarios = new ArrayList<User>();
 		Conexion conex = new Conexion();
 
-		String sql = "SELECT cedula, nombre, email, username, password FROM usuarios ";
+		String sql = "SELECT cedula, nombre, email, username, password FROM usuario ";
 		if (!cedula.trim().equals("null")) {
 			sql = sql + "WHERE cedula = '" + cedula + "'";
 		}
@@ -81,8 +105,8 @@ public class UserDAO {
 			ResultSet res = consulta.executeQuery(sql);
 
 			while (res.next()) {
-				User user = new User(res.getInt("cedula"), res.getString("nombre"),
-						res.getString("email"), res.getString("username"), res.getString("password"));
+				User user = new User(res.getInt("cedula"), res.getString("nombre"), res.getString("email"),
+						res.getString("username"), res.getString("password"));
 				usuarios.add(user);
 			}
 			res.close();
@@ -94,16 +118,14 @@ public class UserDAO {
 		}
 		return usuarios;
 	}
-	
-	
-    public User checkLogin(String username, String password) throws SQLException,
-            ClassNotFoundException {
-    	Conexion con= new Conexion();
-    	User result = null;
-    	
+
+	public User checkLogin(String username, String password) throws SQLException, ClassNotFoundException {
+		Conexion con = new Conexion();
+		User result = null;
+
 		try {
 			Statement stmt = con.getConecction().createStatement();
-			String sql = "SELECT * FROM usuarios WHERE username = '"+username+"' AND password='"+password+"'";
+			String sql = "SELECT * FROM usuarios WHERE username = '" + username + "' AND password='" + password + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				int ce = rs.getInt("cedula");
@@ -119,5 +141,5 @@ public class UserDAO {
 			System.out.print("Usuario o clave incorrecto.");
 		}
 		return result;
-    }
+	}
 }

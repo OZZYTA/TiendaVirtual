@@ -73,6 +73,18 @@ public class VirtualStoreRESTController {
 		return dao.consultarProveedores(nit);		
 	}
 	
+	@RequestMapping("/actualizarProveedor")
+	public void actualizarProveedor(Proveedor pro) {
+		ProveedorDAO dao = new ProveedorDAO();
+		dao.actualizarProveedor(pro);
+	}
+	
+	@RequestMapping("/eliminarProveedor")
+	public void eliminarProveedor(String NIT) {
+		ProveedorDAO dao = new ProveedorDAO();
+		dao.eliminarProveedor(NIT);
+	}
+	
 	@RequestMapping("/consultarUsuarios")
 	public ArrayList<User> consultarUsuarios(String cedula) {		
 		UserDAO dao= new UserDAO();
@@ -91,6 +103,18 @@ public class VirtualStoreRESTController {
 		return dao.consultarProductos(codigo_producto);
 	}
 	
+	@RequestMapping("/actualizarCliente")
+	public void actualizarCliente(Cliente cli) {
+		ClienteDAO dao = new ClienteDAO();
+		dao.actualizarCliente(cli);
+	}
+	
+	@RequestMapping("/eliminarCliente")
+	public void eliminarCliente(String cedula) {
+		ClienteDAO dao = new ClienteDAO();
+		dao.eliminarCliente(cedula);
+	}
+	
 	
 	@RequestMapping("/ingresarUsuario")
 	public String insertarUsuario(User u) {		
@@ -100,6 +124,17 @@ public class VirtualStoreRESTController {
 		//?cedula=1252531&nombre=ClaraLuz&direccion=barranquilla&telefono=58374&email=correo@correo.com	
 	}
 
+	@RequestMapping("/actualizarUsuario")
+	public void actualizarUsuario(User user) {
+		UserDAO dao = new UserDAO();
+		dao.actualizarUsuario(user);
+	}
+	
+	@RequestMapping("/eliminarUsuario")
+	public void eliminarUsuario(String cedula) {
+		UserDAO dao = new UserDAO();
+		dao.eliminarUsuario(cedula);
+	}
 	
 	@RequestMapping("/listarUsuarios")
 	public ArrayList<User> listarUser() {

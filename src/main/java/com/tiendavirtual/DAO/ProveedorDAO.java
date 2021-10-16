@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import com.tiendavirtual.DAO.*;
 import com.tiendavirtual.DTO.Cliente;
 import com.tiendavirtual.DTO.Proveedor;
+import com.tiendavirtual.DTO.User;
 
 public class ProveedorDAO {
 
@@ -27,6 +28,41 @@ public class ProveedorDAO {
 		}
 	}
 
+	public void actualizarProveedor(Proveedor pro) {
+
+		Conexion con = new Conexion();
+		Statement stmt;
+		try {
+			stmt = con.getConecction().createStatement();
+			stmt.executeUpdate(" UPDATE proveedores SET nombre = " + "'" + pro.getNombre() + "'" + ","
+					+ " direccion = " + "'" + pro.getDireccion() + "'" + "," + " telefono =" + "'" + pro.getTelefono() + "'"
+					+ "," + " email = " + "'" + pro.getEmail() + "'" + "," + " sitioweb =" + "'" + pro.getSitioweb() + "'" + " WHERE NIT = " + "'"
+					+ pro.getNIT() + "'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+		
+	
+
+public void eliminarProveedor(String NIT) {
+		
+		Conexion con = new Conexion();
+
+		Statement stmt;
+		try {
+			stmt = con.getConecction().createStatement();
+			stmt.executeUpdate("DELETE FROM proveedores WHERE NIT = "+"'"+NIT+"'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	
 	public ArrayList<Proveedor> consultarProveedores(String nit) {
 		ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
 		Conexion conex = new Conexion();

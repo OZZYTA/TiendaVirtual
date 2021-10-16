@@ -33,15 +33,38 @@ public class ClienteDAO {
 		
 	}
 	
-	public User updateCliente(String cedula) {
-	return null;
-	}
-	
-	public void searchCliente() {
-	
+	public void actualizarCliente(Cliente cli) {
+
+		Conexion con = new Conexion();
+		Statement stmt;
+		try {
+			stmt = con.getConecction().createStatement();
+			stmt.executeUpdate(" UPDATE clientes SET nombre = " + "'" + cli.getNombre() + "'" + ","
+					+ " direccion = " + "'" + cli.getDireccion() + "'" + "," + " telefono =" + "'" + cli.getTelefono() + "'"
+					+ "," + " email = " + "'" + cli.getEmail() + "'" + " WHERE cedula = " + "'"
+					+ cli.getCedula() + "'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
-	
+		
+
+public void eliminarCliente(String cedula) {
+		
+		Conexion con = new Conexion();
+
+		Statement stmt;
+		try {
+			stmt = con.getConecction().createStatement();
+			stmt.executeUpdate("DELETE FROM clientes WHERE cedula = "+"'"+cedula+"'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 	public ArrayList<Cliente> consultarClientes(String cedula) {
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		Conexion conex = new Conexion();
