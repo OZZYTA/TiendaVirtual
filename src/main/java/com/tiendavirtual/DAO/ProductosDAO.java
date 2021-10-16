@@ -114,6 +114,35 @@ public class ProductosDAO {
 		return producto;
 	}
 	
+	public double ValorUnitario(int id) {
+		double valorunitario=0;
+		Conexion con = new Conexion();
+		try {
+			Statement consulta = con.getConecction().createStatement();
+			ResultSet res = consulta.executeQuery("SELECT precio_compra FROM productos WHERE idproductos = '"+id+"'");
+			res.next();
+			valorunitario = res.getDouble("precio_compra");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return valorunitario;
+	}
+	
+	public double ValorIva(int id) {
+		double ivacompra=0;
+		Conexion con = new Conexion();
+		try {
+			Statement consulta = con.getConecction().createStatement();
+			ResultSet res = consulta.executeQuery("SELECT ivacompra FROM productos WHERE idproductos = '"+id+"'");
+			res.next();
+			ivacompra = res.getDouble("ivacompra");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ivacompra;
+	}
 
 
 }

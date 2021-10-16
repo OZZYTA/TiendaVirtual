@@ -116,6 +116,38 @@ public void eliminarCliente(String cedula) {
 		}
 		return lstclientes;	
 	}
+	
+	
+public String nombreCliente(int id) {
+		String nombre="";
+		Conexion con = new Conexion();
+		try {
+			Statement consulta = con.getConecction().createStatement();
+			ResultSet res = consulta.executeQuery("SELECT nombre FROM clientes WHERE id = '"+id+"'");
+			res.next();
+			nombre = res.getString("nombre");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return nombre;
+	}
+
+
+public String telefonoCliente(int id) {
+	String telefono="";
+	Conexion con = new Conexion();
+	try {
+		Statement consulta = con.getConecction().createStatement();
+		ResultSet res = consulta.executeQuery("SELECT telefono FROM clientes WHERE id = '"+id+"'");
+		res.next();
+		telefono = res.getString("telefono");
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return telefono;
+}
  
 	public User deleteCliente(String cedula) {
 		return null;		

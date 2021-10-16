@@ -124,7 +124,7 @@ body {
    <form class="login-container" action="/Grupo11Cucuta/ConsultaUsuarios.jsp" method="post">
     <input type="submit" name="create" id="create" value="Consultar Usuarios">
   </form>
-   <form class="login-container" action="/Grupo11Cucuta/actUsuarios.jsp" method="post">
+   <form class="login-container" action="/Grupo11Cucuta/ActualizarUsuario.jsp" method="post">
     <input type="submit" name="update" id="update" value="Actualizar/Eliminar Usuarios">
   </form>
      <form class="login-container" action="/Grupo11Cucuta/index.jsp" method="post">

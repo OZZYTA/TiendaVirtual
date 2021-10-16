@@ -124,11 +124,7 @@ body {
    <form class="login-container" action="/Grupo11Cucuta/ConsultaClientes.jsp" method="post">
     <input type="submit" name="update" id="update" value="Consultar Clientes">
   </form>
-<<<<<<< Updated upstream
-   <form class="login-container" action="/Grupo11Cucuta/actClientes.jsp" method="post">
-=======
    <form class="login-container" action="/Grupo11Cucuta/ActualizarCliente.jsp" method="post">
->>>>>>> Stashed changes
     <input type="submit" name="update" id="update" value="Actualizar/Eliminar Cliente">
   </form>
      <form class="login-container" action="/Grupo11Cucuta/index.jsp" method="post">

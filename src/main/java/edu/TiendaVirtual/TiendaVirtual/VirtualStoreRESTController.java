@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.tiendavirtual.DAO.Ajax;
 import com.tiendavirtual.DAO.ClienteDAO;
 import com.tiendavirtual.DAO.ProductosDAO;
 import com.tiendavirtual.DAO.ProveedorDAO;
@@ -33,6 +32,8 @@ import com.tiendavirtual.DTO.Productos;
 import com.tiendavirtual.DTO.Proveedor;
 //import com.tiendavirtual.DTO.Proveedor;
 import com.tiendavirtual.DTO.User;
+import com.tiendavirtual.DTO.Ventas;
+import com.tiendavirtual.DAO.VentasDAO;
 
 @RestController
 public class VirtualStoreRESTController {
@@ -51,6 +52,34 @@ public class VirtualStoreRESTController {
 		dao.listarClientes();
 		return dao.listarClientes();
 	}
+	
+	
+	@RequestMapping("/consultarNombre")
+	public String consultarNombre(int id) {
+		ClienteDAO dao= new ClienteDAO();
+		dao.nombreCliente(id);
+		return dao.nombreCliente(id);	
+	}
+	
+	@RequestMapping("/consultarTelefono")
+	public String consultarTelefono(int id) {
+		ClienteDAO dao= new ClienteDAO();
+		dao.telefonoCliente(id);
+		return dao.telefonoCliente(id);	
+	}
+	
+	@RequestMapping("/consultarValorUnit")
+	public double consultarValorUnit(int id) {
+		ProductosDAO dao=new ProductosDAO();
+		return dao.ValorUnitario(id);
+	}
+	
+	@RequestMapping("/consultarIva")
+	public double consultarIva(int id) {
+		ProductosDAO dao=new ProductosDAO();
+		return dao.ValorIva(id);
+	}
+	
 	
 	//?NIT=112233&nombre=Gato&direccion=Barranquilla&telefono=314456987&email=gato@hotmail.com&sitioweb=www.elgato.com
 	@RequestMapping("/registrarProveedor")
@@ -164,13 +193,13 @@ public class VirtualStoreRESTController {
 	    return ResponseEntity.ok("Archivo Cargado correctamente");
 	  }
 	
-	@RequestMapping("/ventasProductos")
-	public ArrayList<Productos> ventasProductos() {
-		Ajax dao= new Ajax();
-		dao.productosVentas();
-		return dao.productosVentas();
+	@RequestMapping("/ingresarVenta")
+	public String ingresarVenta(Ventas venta) {		
+		VentasDAO dao=new VentasDAO();
+		dao.insertVenta(venta);
+		return "Venta ingresada";
+		//?cedula=1252531&nombre=ClaraLuz&direccion=barranquilla&telefono=58374&email=correo@correo.com
 	}
-	
 	
 	
 	

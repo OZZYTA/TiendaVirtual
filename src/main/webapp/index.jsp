@@ -132,7 +132,7 @@ body {
     <input type="submit" name="register" id="register" value="Productos">
   </form>
      <form class="login-container" action="/Grupo11Cucuta/Ventas.jsp" method="post">
-    <input type="submit" name="register" id="register" value="Ventas">
+    <input type="submit" name="register" id="register" value="Registrar Venta">
   </form>
      <form class="login-container" action="/Grupo11Cucuta/LogOut" method="post" onsubmit="return confirm ('Gracias por usar nuestra tienda virtual')">
     <input type="submit" name="register" id="register" value="Cerrar Sesión">
